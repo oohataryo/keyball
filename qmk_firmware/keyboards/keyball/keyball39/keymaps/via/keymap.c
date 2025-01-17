@@ -75,10 +75,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             rgblight_sethsv(HSV_BLUE);
             break;        
         case 5:
-            rgblight_sethsv(HSV_AZURE);
-            break;
-        case 6:
             rgblight_sethsv(HSV_ORANGE);
+            break;
+        case 7:
+            rgblight_sethsv(HSV_AZURE);
             break;
     }
     return state;
