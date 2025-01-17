@@ -65,14 +65,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case 2:
             rgblight_sethsv(HSV_GREEN);
             break;
-        case 4:
+        case 3:
             rgblight_sethsv(HSV_AZURE);
             break;
-        case 3:
+        case 4:
             rgblight_sethsv(HSV_BLUE);
             break;        
         case 5:
             rgblight_sethsv(HSV_AZURE);
+            break;
+        case 6:
+            rgblight_sethsv(HSV_ORANGE);
             break;
     }
     // Auto enable scroll mode when the highest layer is 3
