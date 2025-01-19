@@ -27,8 +27,8 @@ enum combos {
 const uint16_t PROGMEM altr_combo[] = {KC_LALT, KC_R, COMBO_END};
 const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
 combo_t key_combos[] = {
-  [ALTR_ALTSFT] = COMBO(altr_combo, ALTR(S(KC_NO))),
-  [ALTF_ALTCTRL] = COMBO(altf_combo, ALTR(LCTL(KC_NO))),
+  [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
+  [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
 };
 enum {
     TD_H,
