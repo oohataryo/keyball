@@ -30,12 +30,12 @@ combo_t key_combos[] = {
   [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
   [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
 };
-// enum {
-//     TD_H,
-// };
-// tap_dance_action_t tap_dance_actions[] = {
-//   [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
-// };
+ enum {
+     TD_H,
+ };
+ tap_dance_action_t tap_dance_actions[] = {
+   [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
+ };
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
