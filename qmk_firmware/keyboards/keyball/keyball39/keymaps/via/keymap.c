@@ -20,16 +20,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "quantum.h"
 
-// enum combos {
-//   ALTR_ALTSFT,
-//   ALTF_ALTCTRL
-// };
-// const uint16_t PROGMEM altr_combo[] = {KC_LALT, KC_R, COMBO_END};
-// const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
-// combo_t key_combos[] = {
-//   [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
-//   [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
-// };
+ enum combos {
+   ALTR_ALTSFT,
+   ALTF_ALTCTRL
+ };
+ const uint16_t PROGMEM altr_combo[] = {KC_LALT, KC_R, COMBO_END};
+ const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
+ combo_t key_combos[] = {
+   [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
+   [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
+ };
  enum {
      TD_H,
  };
