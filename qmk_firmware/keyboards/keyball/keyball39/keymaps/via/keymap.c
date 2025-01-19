@@ -30,17 +30,17 @@ combo_t key_combos[] = {
   [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
   [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
 };
-enum {
-    TD_H,
-};
-tap_dance_action_t tap_dance_actions[] = {
-  [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
-};
+// enum {
+//     TD_H,
+// };
+// tap_dance_action_t tap_dance_actions[] = {
+//   [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
+// };
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
   [0] = LAYOUT_universal(
-    TD_H     , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
+    _______  , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
     KC_A     , KC_S     , KC_D     , KC_F     , KC_LALT     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
     KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
     KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_LNG2),LT(1,KC_SPC),LT(3,KC_LNG1),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
    [5] = LAYOUT_universal(
-    TD(TD_H) , AML_TO   , AML_I50  , TD(TD_H) , _______  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
+    _______  , AML_TO   , AML_I50  , _______  , _______  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , SCRL_DVI ,                            _______  , _______  , _______  , _______  , _______  ,
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , SCRL_DVD ,                            CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE ,
     QK_BOOT  , KBC_RST  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , KBC_RST  , QK_BOOT
