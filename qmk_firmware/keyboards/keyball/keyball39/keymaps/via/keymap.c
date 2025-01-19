@@ -20,16 +20,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "quantum.h"
 
-enum combos {
-  ALTR_ALTSFT,
-  ALTF_ALTCTRL
-};
-const uint16_t PROGMEM altr_combo[] = {KC_LALT, KC_R, COMBO_END};
-const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
-combo_t key_combos[] = {
-  [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
-  [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
-};
+// enum combos {
+//   ALTR_ALTSFT,
+//   ALTF_ALTCTRL
+// };
+// const uint16_t PROGMEM altr_combo[] = {KC_LALT, KC_R, COMBO_END};
+// const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
+// combo_t key_combos[] = {
+//   [ALTR_ALTSFT] = COMBO(altr_combo, LALT(S(KC_NO))),
+//   [ALTF_ALTCTRL] = COMBO(altf_combo, LALT(LCTL(KC_NO))),
+// };
  enum {
      TD_H,
  };
@@ -40,7 +40,7 @@ combo_t key_combos[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
   [0] = LAYOUT_universal(
-    _______  , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
+    TD(TD_H) , KC_W     , KC_E     , KC_R     , KC_T     ,                            KC_Y     , KC_U     , KC_I     , KC_O     , KC_P     ,
     KC_A     , KC_S     , KC_D     , KC_F     , KC_LALT     ,                            KC_H     , KC_J     , KC_K     , KC_L     , KC_MINS  ,
     KC_Z     , KC_X     , KC_C     , KC_V     , KC_B     ,                            KC_N     , KC_M     , KC_COMM  , KC_DOT   , KC_SLSH  ,
     KC_LCTL  , KC_LGUI  , KC_LALT  ,LSFT_T(KC_LNG2),LT(1,KC_SPC),LT(3,KC_LNG1),KC_BSPC,LT(2,KC_ENT),LSFT_T(KC_LNG2),KC_RALT,KC_RGUI, KC_RSFT
