@@ -2,7 +2,7 @@ RGBLIGHT_ENABLE = yes
 
 OLED_ENABLE = yes
 
-# VIA_ENABLE = yes
+VIA_ENABLE = yes
 
 EXTRAKEY_ENABLE = yes
 
@@ -20,4 +20,4 @@ CONSOLE_ENABLE = no
 
 TAP_DANCE_ENABLE = yes
 
-COMBO_ENABLE = yes
+# COMBO_ENABLE = yes
