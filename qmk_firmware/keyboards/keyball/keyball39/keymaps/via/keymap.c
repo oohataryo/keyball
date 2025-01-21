@@ -33,9 +33,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // };
  enum {
      TD_H,
+     TO_45,
  };
  tap_dance_action_t tap_dance_actions[] = {
    [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
+   [TO_45] = ACTION_TAP_DANCE_DOUBLE(TO(4), TO(5)),
  };
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
