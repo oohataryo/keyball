@@ -40,15 +40,15 @@ void dance_h_finished(tap_dance_state_t *state, void *user_data) {
         // 一回タップ：通常のH
         tap_code(KC_H);
     } else if (state->count == 2) {
-        // 二回タップ：Shift+H
-        register_code(KC_LSFT);
-        tap_code(KC_H);
-        unregister_code(KC_LSFT);
-    } else if (state->count == 3) {
-        // 三回タップ：Alt+H
+        // 二回タップ：Alt+H
         register_code(KC_LALT);
         tap_code(KC_H);
         unregister_code(KC_LALT);
+    } else if (state->count == 3) {
+        // 三回タップ：Shift+H
+        register_code(KC_LSFT);
+        tap_code(KC_H);
+        unregister_code(KC_LSFT);
     }
 }
 void dance_h_reset(tap_dance_state_t *state, void *user_data) {
