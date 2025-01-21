@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     C(S(KC_T))  , S(KC_TAB)   , A(C(KC_TAB)), KC_BSPC    , KC_ESC     ,                            KC_P7      , KC_P8      , KC_P9     , _______     , KC_HOME     ,
     C(KC_W)     , C(S(KC_TAB)), C(KC_TAB)   , KC_ENT     , C(KC_T)    ,                            KC_P4      , KC_P5      , KC_P6     , _______     , KC_END      ,
     KC_LSFT     , KC_LEFT     , KC_RGHT     , KC_F2      , KC_SPC     ,                            KC_P1      , KC_P2      , KC_P3     , KC_PDOT     , KC_PEQL     ,
-    KC_LCTL     , _______     , _______     ,_______     , TO(4)      , MO(1)         , KC_NUM   , TO(2)      , MO(1)      , KC_P0     , KC_BSPC     , KC_PENT
+    KC_LCTL     , _______     , _______     ,_______     , TD(TO_45)      , MO(1)         , KC_NUM   , TO(2)      , MO(1)      , KC_P0     , KC_BSPC     , KC_PENT
   ),
 
   [1] = LAYOUT_universal(
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
    [5] = LAYOUT_universal(
-    _______  , AML_TO   , AML_I50  , _______  , _______  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
+    _______  , AML_TO   , AML_I50  , TD(TD_H)  , _______  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , SCRL_DVI ,                            _______  , _______  , _______  , _______  , _______  ,
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , SCRL_DVD ,                            CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE ,
     QK_BOOT  , KBC_RST  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , KBC_RST  , QK_BOOT
