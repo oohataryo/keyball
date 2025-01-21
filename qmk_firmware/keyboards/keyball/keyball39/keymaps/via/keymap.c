@@ -51,6 +51,9 @@ void dance_h_finished(tap_dance_state_t *state, void *user_data) {
         unregister_code(KC_LALT);
     }
 }
+void dance_h_reset(tap_dance_state_t *state, void *user_data) {
+    // 必要なリセット処理がなければ、このまま空の定義でOK
+}
 void dance_layer_switch_finished(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         layer_move(4); // 1回タップでレイヤー4に移行
