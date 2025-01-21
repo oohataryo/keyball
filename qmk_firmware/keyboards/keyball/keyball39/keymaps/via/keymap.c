@@ -33,12 +33,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // };
  enum {
      TD_H,
-     TO_45,
+     TD_LAYER_SWITCH ,
  };
+
+void dance_layer_switch_finished(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        layer_move(4); // 1回タップでレイヤー4に移行
+    } else if (state->count == 2) {
+        layer_move(5); // 2回タップでレイヤー5に移行
+    }
+}
+
  tap_dance_action_t tap_dance_actions[] = {
    [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
-   [TO_45] = ACTION_TAP_DANCE_DOUBLE(TO(4), TO(5)),
+   [TD_LAYER_SWITCH] = ACTION_TAP_DANCE_FN(dance_layer_switch_finished),
  };
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // keymap for default (VIA)
@@ -46,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     C(S(KC_T))  , S(KC_TAB)   , A(C(KC_TAB)), KC_BSPC    , KC_ESC     ,                            KC_P7      , KC_P8      , KC_P9     , _______     , KC_HOME     ,
     C(KC_W)     , C(S(KC_TAB)), C(KC_TAB)   , KC_ENT     , C(KC_T)    ,                            KC_P4      , KC_P5      , KC_P6     , _______     , KC_END      ,
     KC_LSFT     , KC_LEFT     , KC_RGHT     , KC_F2      , KC_SPC     ,                            KC_P1      , KC_P2      , KC_P3     , KC_PDOT     , KC_PEQL     ,
-    KC_LCTL     , _______     , _______     ,_______     , TD(TO_45)      , MO(1)         , KC_NUM   , TO(2)      , MO(1)      , KC_P0     , KC_BSPC     , KC_PENT
+    KC_LCTL     , _______     , _______     ,_______     , TD(TD_LAYER_SWITCH)      , MO(1)         , KC_NUM   , TO(2)      , MO(1)      , KC_P0     , KC_BSPC     , KC_PENT
   ),
 
   [1] = LAYOUT_universal(
