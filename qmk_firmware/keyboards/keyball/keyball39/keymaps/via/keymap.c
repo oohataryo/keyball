@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
      TD_LAYER_SWITCH ,
  };
 
-void dance_layer_switch_finished(qk_tap_dance_state_t *state, void *user_data) {
+void dance_layer_switch_finished(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         layer_move(4); // 1回タップでレイヤー4に移行
     } else if (state->count == 2) {
