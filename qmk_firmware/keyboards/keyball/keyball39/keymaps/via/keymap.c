@@ -35,7 +35,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
      TD_H,
      TD_LAYER_SWITCH ,
  };
-
+void dance_h_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        // 一回タップ：通常のH
+        tap_code(KC_H);
+    } else if (state->count == 2) {
+        // 二回タップ：Shift+H
+        register_code(KC_LSFT);
+        tap_code(KC_H);
+        unregister_code(KC_LSFT);
+    } else if (state->count == 3) {
+        // 三回タップ：Alt+H
+        register_code(KC_LALT);
+        tap_code(KC_H);
+        unregister_code(KC_LALT);
+    }
+}
 void dance_layer_switch_finished(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         layer_move(4); // 1回タップでレイヤー4に移行
@@ -45,7 +60,7 @@ void dance_layer_switch_finished(tap_dance_state_t *state, void *user_data) {
 }
 
  tap_dance_action_t tap_dance_actions[] = {
-   [TD_H] = ACTION_TAP_DANCE_DOUBLE(KC_H, S(KC_H)),
+   [TD_H] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_h_finished, dance_h_reset),
    [TD_LAYER_SWITCH] = ACTION_TAP_DANCE_FN(dance_layer_switch_finished),
  };
 
@@ -88,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
    [5] = LAYOUT_universal(
-    _______  , AML_TO   , AML_I50  , TD(TD_H)  , _______  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
+    _______  , AML_TO   , AML_I50  , _______  , TD(TD_H)  ,                            _______  , _______  , SSNP_HOR , SSNP_VRT , SSNP_FRE ,
     RGB_MOD  , RGB_HUI  , RGB_SAI  , RGB_VAI  , SCRL_DVI ,                            _______  , _______  , _______  , _______  , _______  ,
     RGB_RMOD , RGB_HUD  , RGB_SAD  , RGB_VAD  , SCRL_DVD ,                            CPI_D1K  , CPI_D100 , CPI_I100 , CPI_I1K  , KBC_SAVE ,
     QK_BOOT  , KBC_RST  , _______  , _______  , _______  , _______  ,      _______  , _______  , _______  , _______  , KBC_RST  , QK_BOOT
